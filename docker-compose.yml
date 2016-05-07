@@ -1,0 +1,16 @@
+ruboty:
+  build: .
+  links:
+    - redis
+  volumes:
+    - /etc/localtime:/etc/localtime:ro
+  command: bundle exec ruboty --dotenv
+  env_file:
+    - secrets.env
+
+redis:
+  image: redis
+  volumes:
+    - /var/docker_volumes/darkriety/redis_data:/data
+  restart: always
+  command: redis-server --appendonly yes
