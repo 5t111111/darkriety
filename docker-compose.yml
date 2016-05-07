@@ -1,5 +1,5 @@
 ruboty:
-  build: .
+  image: 5t111111/darkriety
   links:
     - redis
   volumes:
